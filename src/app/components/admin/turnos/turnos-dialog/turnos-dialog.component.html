@@ -27,7 +27,7 @@
                    [disabled]="data.action === 'Añadir Diagnóstico' || data.action === 'Editar Turno'"
             >
             <mat-error *ngIf="dni.hasError('required')">Este campo es  obligatorio</mat-error>
-            <mat-error *ngIf="dni.hasError('pattern')">En DNI debe menos 8 carácteres numéricos</mat-error>
+            <mat-error *ngIf="dni.hasError('pattern')">En DNI debe al menos 8 carácteres numéricos</mat-error>
         </mat-form-field>
 
         <mat-form-field>
@@ -56,6 +56,7 @@
             <input  matInput 
                     [matDatepicker]="fechaDeTurno" 
                     [min]="minDate" 
+                    [matDatepickerFilter]="myFilter"
                     name="fecha" 
                     [(ngModel)]="fecha" 
                     required

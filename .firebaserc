@@ -7,5 +7,9 @@
         ]
       }
     }
+  },
+  "projects": {
+    "consultorio-ayacucho": "consultorio-ayacucho",
+    "default": "consultorio-ayacucho"
   }
 }

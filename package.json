@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "electron .",
-    "package": "electron-packager . ConsultorioAyacuchoDemo --platform=win32 --arch=x64  --overwrite --asar=true --icon=./assets/icon.ico --prune=true --out=setup ",
+    "package": "electron-packager . ConsultorioAyacucho --platform=win32 --arch=x64  --overwrite --asar=true --icon=./assets/icon.ico --prune=true --out=setup ",
     "setup": "node build_installer.js"
   },
   "private": true,

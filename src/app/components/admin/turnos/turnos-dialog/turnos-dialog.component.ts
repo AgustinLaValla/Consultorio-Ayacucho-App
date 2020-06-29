@@ -9,9 +9,7 @@ import {
   loadResetMiembro, loadGetPacientByDNI, loadResetPacientStoreData, loadCloseDialog, deactivateLoading, unsubscribeLoading, subscribeLoading
 } from 'src/app/store/actions';
 import { Subscription } from 'rxjs';
-import { Especialidad } from 'src/app/interfaces/especialidad.interface';
 import { Miembro } from 'src/app/interfaces/miembro.interface';
-import { Pacient } from 'src/app/interfaces/pacient.interface';
 import Swal from 'sweetalert2';
 import { filter, map, tap } from 'rxjs/operators';
 import { isNullOrUndefined } from 'util';
@@ -65,6 +63,11 @@ export class TurnosDialogComponent implements OnInit, OnDestroy {
   public maxDate = moment();
 
   public diagnostico: string;
+
+  myFilter = (d: moment.Moment): boolean => {
+    const day = d.day();
+    return day !== 0 && day !== 6;
+  }
 
   constructor(
     public dialogRef: MatDialogRef<TurnosDialogComponent>,
@@ -285,8 +288,7 @@ export class TurnosDialogComponent implements OnInit, OnDestroy {
       dateInSeconds: 0,
       especialistaId: ''
     };
-  }
-
+  };
 
   ngOnDestroy(): void {
     this.turnoSubs$.unsubscribe();
